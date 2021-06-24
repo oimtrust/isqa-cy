@@ -1,0 +1,276 @@
+{
+  "stats": {
+    "suites": 4,
+    "tests": 7,
+    "passes": 7,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-06-24T10:45:39.107Z",
+    "end": "2021-06-24T10:45:45.376Z",
+    "duration": 6269,
+    "testsRegistered": 7,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "a281ddf1-7a1c-490d-b09e-8de17b8a03fe",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "95e6e904-a49d-454a-a3c5-56ade0e591d6",
+          "title": "As an Admin, I want create new user",
+          "fullFile": "/Users/oimtrust/Documents/automateTApps/isqa-cy/test/scenarios/admin/create-user.test.js",
+          "file": "/test/scenarios/admin/create-user.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Should success create user",
+              "fullTitle": "As an Admin, I want create new user Should success create user",
+              "timedOut": false,
+              "duration": 997,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await AdminAPI.createUser(data.VALID_DATA_USERS);\nassert.equal(response.status, 201);\nassert.hasAllKeys(response.data, [\"name\", \"job\", \"id\", \"createdAt\"]);\nassert.isString(response.data.name);\nassert.isString(response.data.job);\nassert.isString(response.data.id);",
+              "err": {},
+              "uuid": "7253ae7e-6260-4838-93a8-5579345b5f59",
+              "parentUUID": "95e6e904-a49d-454a-a3c5-56ade0e591d6",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "7253ae7e-6260-4838-93a8-5579345b5f59"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 997,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 180000
+        },
+        {
+          "uuid": "132f57a5-cd34-4a0a-a02e-b41a14efa567",
+          "title": "As an admin, I want to see all users have been created",
+          "fullFile": "/Users/oimtrust/Documents/automateTApps/isqa-cy/test/scenarios/admin/get-all-users.test.js",
+          "file": "/test/scenarios/admin/get-all-users.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Should success get all users",
+              "fullTitle": "As an admin, I want to see all users have been created Should success get all users",
+              "timedOut": false,
+              "duration": 642,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await AdminAPI.getAllUsers();\nassert.equal(response.status, 200)\nexpect(response.data).to.be.jsonSchema(schema.VALID_GET_ALL_USERS)",
+              "err": {},
+              "uuid": "78f33ad0-42a4-4512-931a-9709755b7379",
+              "parentUUID": "132f57a5-cd34-4a0a-a02e-b41a14efa567",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Should success get all users using page and per_page as a parameter",
+              "fullTitle": "As an admin, I want to see all users have been created Should success get all users using page and per_page as a parameter",
+              "timedOut": false,
+              "duration": 933,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const params    = getParams(data.GET_ALL_USERS_VALID_PARAMETER)\nconst response  = await AdminAPI.getAllUsersWithParams(params)\nassert.equal(response.status, 200)\nexpect(response.data).to.be.jsonSchema(schema.VALID_GET_ALL_USERS)",
+              "err": {},
+              "uuid": "2b3ea87b-3d6b-4824-be2b-b48579996def",
+              "parentUUID": "132f57a5-cd34-4a0a-a02e-b41a14efa567",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "78f33ad0-42a4-4512-931a-9709755b7379",
+            "2b3ea87b-3d6b-4824-be2b-b48579996def"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1575,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 180000
+        },
+        {
+          "uuid": "b78b33a7-186a-4ca3-886b-53b262f68104",
+          "title": "As a user, I want to login",
+          "fullFile": "/Users/oimtrust/Documents/automateTApps/isqa-cy/test/scenarios/user/login.test.js",
+          "file": "/test/scenarios/user/login.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Should success try to login using valid account",
+              "fullTitle": "As a user, I want to login Should success try to login using valid account",
+              "timedOut": false,
+              "duration": 914,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await UserAPI.login(data.VALID_LOGIN);\nassert.equal(response.status, 200);\nassert.hasAllKeys(response.data, [\"token\"])\nassert.isString(response.data.token)",
+              "err": {},
+              "uuid": "521110f9-9c05-4abb-922c-3ce8049f6f8e",
+              "parentUUID": "b78b33a7-186a-4ca3-886b-53b262f68104",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Should failed try to login using invalid account",
+              "fullTitle": "As a user, I want to login Should failed try to login using invalid account",
+              "timedOut": false,
+              "duration": 930,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await UserAPI.login(data.INVALID_LOGIN);\nassert.equal(response.status, 400);\nassert.hasAllKeys(response.data, [\"error\"])\nassert.isString(response.data.error)",
+              "err": {},
+              "uuid": "2394e481-37db-4578-9682-43aa159cecfb",
+              "parentUUID": "b78b33a7-186a-4ca3-886b-53b262f68104",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "521110f9-9c05-4abb-922c-3ce8049f6f8e",
+            "2394e481-37db-4578-9682-43aa159cecfb"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1844,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 180000
+        },
+        {
+          "uuid": "71f602d1-9463-40e9-9efc-017419112691",
+          "title": "As a user, I want to register",
+          "fullFile": "/Users/oimtrust/Documents/automateTApps/isqa-cy/test/scenarios/user/register.test.js",
+          "file": "/test/scenarios/user/register.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Should successfull register new account using valid data",
+              "fullTitle": "As a user, I want to register Should successfull register new account using valid data",
+              "timedOut": false,
+              "duration": 916,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await  UserAPI.register(data.VALID_REGISTER);\nassert.equal(response.status, 200);\nassert.containsAllKeys(response.data, [\"id\", \"token\"]);\nassert.isNumber(response.data.id);\nassert.isString(response.data.token);",
+              "err": {},
+              "uuid": "5923918d-351d-4949-8703-37c209d52a28",
+              "parentUUID": "71f602d1-9463-40e9-9efc-017419112691",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Should failed try to register using invalid data",
+              "fullTitle": "As a user, I want to register Should failed try to register using invalid data",
+              "timedOut": false,
+              "duration": 912,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await UserAPI.register(data.INVALID_REGISTER);\nassert.equal(response.status, 400);\nassert.containsAllKeys(response.data, [\"error\"]);\nassert.isString(response.data.error);",
+              "err": {},
+              "uuid": "f8171622-a519-44b6-a4a6-35ee9027eff7",
+              "parentUUID": "71f602d1-9463-40e9-9efc-017419112691",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "5923918d-351d-4949-8703-37c209d52a28",
+            "f8171622-a519-44b6-a4a6-35ee9027eff7"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1828,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 180000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 180000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "9.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "reports/"
+      },
+      "version": "5.2.0"
+    }
+  }
+}

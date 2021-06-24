@@ -1,0 +1,45 @@
+# dependencies
+/node_modules
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.DS_Store
+.idea/
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+.vscode/
+
+reports/mochawesome/*
+!reports/mochawesome/.gitignore
+
+reports/flip-server/api/mobile-v2/*
+!reports/flip-server/api/mobile-v2/.gitignore
+
+### CypressIO ###
+# gitignore template for the CypressIO, browser test framework
+# website: https://www.cypress.io/
+
+cypress/results/*
+cypress/reports/*
+cypress/screenshots/*
+cypress/videos/*
+
+### Node ###
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Diagnostic reports (https://nodejs.org/api/report.html)
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
