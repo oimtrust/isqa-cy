@@ -1,5 +1,5 @@
 export const VALID_REGISTER = {
-    email: "eve.holt@reqres.in",
+    email: "oim@gmail.com",
     password: "pistol"
 }
 

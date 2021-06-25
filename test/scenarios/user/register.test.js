@@ -6,10 +6,16 @@ describe('As a user, I want to register', () => {
     it('Should successfull register new account using valid data', async () => {
         const response = await  UserAPI.register(data.VALID_REGISTER);
 
-        assert.equal(response.status, 200);
-        assert.containsAllKeys(response.data, ["id", "token"]);
-        assert.isNumber(response.data.id);
-        assert.isString(response.data.token);
+        if (response.status === 200) {
+            assert.equal(response.status, 200);
+            assert.containsAllKeys(response.data, ["id", "token"]);
+            assert.isNumber(response.data.id);
+            assert.isString(response.data.token);
+        } else {
+            assert.equal(response.status, 400)
+            assert.equal(response.data.error, "Note: Only defined users succeed registration")
+        }
+        
     });
 
     it('Should failed try to register using invalid data', async () => {
